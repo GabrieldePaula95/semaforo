@@ -57,9 +57,48 @@ spring.jpa.database-platform=org.hibernate.dialect.Oracle12cDialect
 spring.jpa.hibernate.ddl-auto=update
 
 
-🐳 Rodando com Docker (opcional)
+🐳 Rodando com Docker 
 
-docker run -d -p 1521:1521 -e ORACLE_PASSWORD=oracle gvenzl/oracle-xe
+- Docker Desktop (instalado)
+- Git instalado
+- [Docker Compose](https://docs.docker.com/compose/)
+
+Navegue até o diretório da aplicação.
+
+# 1. Gerar a imagem da aplicação
+docker-compose up --build
+- Criar o container do banco Oracle XE
+- Fazer o build da aplicação Spring Boot
+- Iniciar a aplicação na porta 8080
+
+# 2. Acesse a aplicação
+exemplo:
+http://localhost:8080/usuarios
+
+# 3. login: user
+senha: (gerada no terminal)
+
+Teste com Postman ( caso necessário )
+- Aba Authorization
+- Tipo: No Auth ( colocado apenas para testar, é possivel dar um Get, Post e Delet.)
+
+
+POST
+POST http://localhost:8080/usuarios
+Content-Type: application/json
+
+{
+  "nome": "João da Silva",
+  "email": "joao@exemplo.com",
+  "papel": "Moderador",
+  "senha": "123456"
+}
+
+GET http://localhost:8080/usuarios
+
+Para intorremper os containers
+docker-compose down
+
 
 ▶ Compilar e executar
 

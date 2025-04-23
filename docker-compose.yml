@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - oracle
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:oracle:thin:@//oracle.fiap.com.br:1521/ORCL
+      SPRING_DATASOURCE_USERNAME: RM553588
+      SPRING_DATASOURCE_PASSWORD: 200296
+    networks:
+      - semaforo-net
+
+  oracle:
+    image: gvenzl/oracle-xe
+    environment:
+      ORACLE_PASSWORD: suasenha
+    ports:
+      - "1521:1521"
+    networks:
+      - semaforo-net
+
+networks:
+  semaforo-net:
