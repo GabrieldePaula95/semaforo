@@ -9,8 +9,8 @@ services:
       - oracle
     environment:
       SPRING_DATASOURCE_URL: jdbc:oracle:thin:@//oracle.fiap.com.br:1521/ORCL
-      SPRING_DATASOURCE_USERNAME: RM552705
-      SPRING_DATASOURCE_PASSWORD: 250903
+      SPRING_DATASOURCE_USERNAME: RM553588
+      SPRING_DATASOURCE_PASSWORD: 200296
     networks:
       - semaforo-net
 

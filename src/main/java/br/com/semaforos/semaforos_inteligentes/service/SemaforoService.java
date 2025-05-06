@@ -29,4 +29,13 @@ public class SemaforoService {
     public void deletar(Long id) {
         repository.deleteById(id);
     }
+
+    public Optional<Semaforo> atualizar(Long id, Semaforo semaforoAtualizado) {
+        return repository.findById(id).map(semaforoExistente -> {
+            semaforoExistente.setIdentificador(semaforoAtualizado.getIdentificador());
+            semaforoExistente.setStatus(semaforoAtualizado.getStatus());
+            semaforoExistente.setCruzamento(semaforoAtualizado.getCruzamento());
+            return repository.save(semaforoExistente);
+        });
+    }
 }

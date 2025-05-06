@@ -28,6 +28,20 @@ public class CruzamentoService {
         return repository.findById(id);
     }
 
+    public Optional<Cruzamento> atualizar(Long id, Cruzamento cruzamentoAtualizado) {
+        Optional<Cruzamento> existente = repository.findById(id);
+
+        if (existente.isPresent()) {
+            Cruzamento cruzamento = existente.get();
+            cruzamento.setNome(cruzamentoAtualizado.getNome());
+            cruzamento.setLocalizacao(cruzamentoAtualizado.getLocalizacao());
+            return Optional.of(repository.save(cruzamento));
+        }
+
+        return Optional.empty();
+    }
+
+
     public void deletar(Long id) {
         repository.deleteById(id);
     }

@@ -34,6 +34,13 @@ public class CruzamentoController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Cruzamento> atualizar(@PathVariable Long id, @RequestBody Cruzamento cruzamento) {
+        return service.atualizar(id, cruzamento)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         service.deletar(id);

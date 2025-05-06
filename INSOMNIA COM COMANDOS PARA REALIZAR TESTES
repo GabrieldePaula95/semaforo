@@ -1,0 +1,806 @@
+type: collection.insomnia.rest/5.0
+name: Semaforo
+meta:
+  id: wrk_5b9a7f80cc094165854d13e58518d8a2
+  created: 1742229055332
+  modified: 1742229055332
+collection:
+  - name: User
+    meta:
+      id: fld_fe4dd5a00cde4149958fd7efa5d61105
+      created: 1742231617345
+      modified: 1745320220259
+      sortKey: -1742231617345
+    children:
+      - url: http://localhost:8080/usuarios
+        name: Create User
+        meta:
+          id: req_fa74eff0a7d94f38965858249089e9a9
+          created: 1742229068196
+          modified: 1745320349389
+          isPrivate: false
+          sortKey: -1742232098020
+        method: POST
+        body:
+          mimeType: application/json
+          text: |+
+            {
+              "nome": "Jose da Silva",
+              "email": "jose@hotmail.com",
+              "senha": "123456",
+              "papel": "ADMIN"
+            }
+
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.3.1
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios/21
+        name: Delete
+        meta:
+          id: req_6379d559242140998846dac0f893057b
+          created: 1742231738769
+          modified: 1745321097370
+          isPrivate: false
+          sortKey: -1742231630482
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/10.3.1
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios/21
+        name: Update User
+        meta:
+          id: req_3852a6dfe02a47629b1635888937f1e5
+          created: 1742231879300
+          modified: 1745321049646
+          isPrivate: false
+          sortKey: -1742231879300
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nome": "Jose da Silva",
+              "email": "josesilva@hotmail.com",
+              "senha": "123456",
+              "papel": "ADMIN"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/10.3.1
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios
+        name: Read User
+        meta:
+          id: req_619d9c6501b4491d815afa56b21bbe68
+          created: 1742232097920
+          modified: 1745320425995
+          isPrivate: false
+          sortKey: -1742232097920
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/10.3.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios/4
+        name: Read User for Id
+        meta:
+          id: req_c66b050630374e21873d4af8d6169bac
+          created: 1745321131933
+          modified: 1745321191431
+          isPrivate: false
+          sortKey: -1742231988610
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Status Semaforo
+    meta:
+      id: fld_e3e202dd883945c091d6e53f375b2080
+      created: 1745321268617
+      modified: 1745321268617
+      sortKey: -1745321268617
+    children:
+      - url: http://localhost:8080/status-semaforo
+        name: Create Status Semaforo
+        meta:
+          id: req_c2c7491c6d78462eba1d5c5ab4b17293
+          created: 1745321272797
+          modified: 1745321683182
+          isPrivate: false
+          sortKey: -1745321272797
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+            	"descricao": "Semáforo em teste de sincronização"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/status-semaforo/7
+        name: Delete Status Semaforo
+        meta:
+          id: req_ac6810cdd7c44d09a229bd9c710c9dc1
+          created: 1745322004743
+          modified: 1745322056235
+          isPrivate: false
+          sortKey: -1745321272697
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/status-semaforo
+        name: Read Status Semaforo
+        meta:
+          id: req_74ae0d0a5699486bab7bc5fe838d5739
+          created: 1745326913568
+          modified: 1745326947661
+          isPrivate: false
+          sortKey: -1745321272747
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/status-semaforo/5
+        name: Read Status Semaforo for Id
+        meta:
+          id: req_6f558746641e48c9968ecb29dd07592c
+          created: 1745326955879
+          modified: 1745327142318
+          isPrivate: false
+          sortKey: -1745321272722
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/status-semaforo/5
+        name: Update Status Semadoro
+        meta:
+          id: req_b65da421cca1485f8e0b2633810c133a
+          created: 1745327071697
+          modified: 1745327556337
+          isPrivate: false
+          sortKey: -1745321272709.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            		"descricao": "Semáforo com falha técnica"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Semaforo
+    meta:
+      id: fld_3ca866c461ab4eb49408defdcc26688d
+      created: 1745321754600
+      modified: 1745321754600
+      sortKey: -1745321754600
+    children:
+      - url: http://localhost:8080/semaforos
+        name: Create Semaforo
+        meta:
+          id: req_57adf29df60c45a38e7b0a0b048cc8b8
+          created: 1745321760051
+          modified: 1745322875614
+          isPrivate: false
+          sortKey: -1745321760051
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "identificador": "SMF-005",
+              "cruzamento": { "id": 24 },
+              "status": { "id": 5 }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/semaforos
+        name: Read Semaforo
+        meta:
+          id: req_608464087c424c4597eac8e3c8a47b6a
+          created: 1745323086398
+          modified: 1745323146227
+          isPrivate: false
+          sortKey: -1745321759951
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/semaforos/3
+        name: Read Semaforo for Id
+        meta:
+          id: req_fb93663bf39841f9a7e35c12ef1fbddf
+          created: 1745327590416
+          modified: 1745327647214
+          isPrivate: false
+          sortKey: -1745321759851
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/semaforos/3
+        name: Update Semaforo
+        meta:
+          id: req_708a98653fe34af38422e7f9cf3445df
+          created: 1745327660979
+          modified: 1745327759690
+          isPrivate: false
+          sortKey: -1745321759751
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "identificador": "SMF-005",
+              "cruzamento": { "id": 24 },
+              "status": { "id": 5 }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/semaforos/3
+        name: Delete Semaforo
+        meta:
+          id: req_28c39f2301c142d6b0e877e310db0457
+          created: 1745327772318
+          modified: 1745327814207
+          isPrivate: false
+          sortKey: -1745321759651
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Cruzamentos
+    meta:
+      id: fld_9ecf9d18bccd454e980b1bf55bcaaacf
+      created: 1745322402022
+      modified: 1745324809985
+      sortKey: -1745322402022
+    children:
+      - url: http://localhost:8080/cruzamentos
+        name: Create Cruzamentos
+        meta:
+          id: req_592514f146ed43b4b971fd9311ae1dd0
+          created: 1745322405093
+          modified: 1745322724680
+          isPrivate: false
+          sortKey: -1745322405093
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+            	"nome": "Cruzamento Oeste",
+            	"localizacao": "Av. Francisco Morato com Rua Cerro Corá"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/cruzamentos/1
+        name: Read Cruzamentos for Id
+        meta:
+          id: req_4c06a5e887ea48f69ec5156938ff9f01
+          created: 1745322753807
+          modified: 1745326043511
+          isPrivate: false
+          sortKey: -1745322404993
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/cruzamentos
+        name: Read Cruzamentos
+        meta:
+          id: req_99e3fd1ef8d548cfbd648f8b5b02a44e
+          created: 1745326009504
+          modified: 1745326034610
+          isPrivate: false
+          sortKey: -1745322405043
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/cruzamentos/24
+        name: Update Cruzamentos
+        meta:
+          id: req_4151f27e9c4b4ecdafd1bf1f1b23ec95
+          created: 1745326051903
+          modified: 1745326817607
+          isPrivate: false
+          sortKey: -1745322404893
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+            	"nome": "Cruzamento Oeste",
+            	"localizacao": "Av. Francisco Morato com Rua Cerro Corá"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/cruzamentos/25
+        name: Delete Cruzamentos
+        meta:
+          id: req_9c775377a68342289319ada65c478260
+          created: 1745326834992
+          modified: 1745326888845
+          isPrivate: false
+          sortKey: -1745322404793
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Horarios Programados
+    meta:
+      id: fld_786fe50076ab4592a88965fa87a21673
+      created: 1745322968392
+      modified: 1745322968392
+      sortKey: -1745322968392
+    children:
+      - url: http://localhost:8080/horarios-programados
+        name: Create Horários Programados
+        meta:
+          id: req_be3a944b95534b0d8676c946e6995982
+          created: 1745322971645
+          modified: 1745325880492
+          isPrivate: false
+          sortKey: -1745322971645
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+            	"horarioInicio": "06:00:00",
+            	"horarioFim": "09:00:00",
+            	"semaforo": { "id": 3 }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/horarios-programados
+        name: Read Horários Programados
+        meta:
+          id: req_6453fef411f946a0b32985e1ab38095d
+          created: 1745324814247
+          modified: 1745325893405
+          isPrivate: false
+          sortKey: -1745322971545
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/horarios-programados/26
+        name: Update Horários Programados
+        meta:
+          id: req_80bb67df3fd8498a967d64878b70fe51
+          created: 1745324898982
+          modified: 1745325268025
+          isPrivate: false
+          sortKey: -1745322971445
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+            	"horarioInicio": "06:00:00",
+            	"horarioFim": "12:00:00",
+            	"semaforo": { "id": 4 }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/horarios-programados/28
+        name: Delete Horários Programados
+        meta:
+          id: req_0c079e198dc14e46915222909b13414e
+          created: 1745325823472
+          modified: 1745325916490
+          isPrivate: false
+          sortKey: -1745322971345
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/horarios-programados/26
+        name: Read Horários Programados for Id
+        meta:
+          id: req_d9b9f6d8f6d84dc6bdaa9e3f808f7c0f
+          created: 1745325944113
+          modified: 1745325988321
+          isPrivate: false
+          sortKey: -1745322971495
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        authentication:
+          type: basic
+          useISO88591: false
+          disabled: false
+          username: admin
+          password: admin
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_bd99194408fd0a6f6e6091291a3261c98acc8822
+    created: 1742229055338
+    modified: 1745320394585
+  cookies:
+    - key: JSESSIONID
+      value: BBE0E2717E61162BA8C28AE2698D87BE
+      domain: localhost
+      path: /
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-04-22T11:13:14.585Z
+      lastAccessed: 2025-04-22T11:13:14.585Z
+      id: 55a04009-79a9-47a2-87b8-ae9daf664664
+environments:
+  name: Base Environment
+  meta:
+    id: env_bd99194408fd0a6f6e6091291a3261c98acc8822
+    created: 1742229055335
+    modified: 1742229055335
+    isPrivate: false

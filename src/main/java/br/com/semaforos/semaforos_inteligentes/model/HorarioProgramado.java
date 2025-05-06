@@ -17,7 +17,7 @@ public class HorarioProgramado {
 
     private LocalTime horarioFim;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)  // Garantir carregamento imediato do Semaforo
     @JoinColumn(name = "semaforo_id")
-    private Semaforo semaforo;
+    private Semaforo semaforo;  // Relacionamento com Semaforo
 }

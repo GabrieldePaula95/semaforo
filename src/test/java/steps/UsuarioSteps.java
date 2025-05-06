@@ -43,7 +43,6 @@ public class UsuarioSteps {
 
         assertEquals(200, usuarioService.response.statusCode());
 
-        // Extrair ID do usuário criado
         JsonNode json = new ObjectMapper().readTree(usuarioService.response.body().asString());
         usuarioId = json.get("id").asLong();
     }
@@ -85,19 +84,5 @@ public class UsuarioSteps {
         for (Map<String, String> linha : rows) {
             usuarioService.setUsuario(linha.get("campo"), linha.get("valor"));
         }
-    }
-
-    @Quando("eu enviar a requisição de atualização para o endpoint {string}")
-    public void enviarRequisicaoAtualizacao(String endpoint) {
-        usuarioService.updateUsuario(endpoint);
-
-        resposta = ResponseEntity
-                .status(usuarioService.response.statusCode())
-                .body(usuarioService.response.getBody().asString());
-    }
-
-    @Então("a resposta esperada deve ser {int}")
-    public void aRespostaEsperadaDeveSer(int esperado) {
-        assertEquals(esperado, resposta.getStatusCodeValue());
     }
 }

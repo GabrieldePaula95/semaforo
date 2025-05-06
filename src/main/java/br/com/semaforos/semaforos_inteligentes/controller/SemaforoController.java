@@ -32,6 +32,13 @@ public class SemaforoController {
         return ResponseEntity.ok(service.salvar(semaforo));
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Semaforo> atualizar(@PathVariable Long id, @RequestBody Semaforo semaforo) {
+        return service.atualizar(id, semaforo)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         service.deletar(id);

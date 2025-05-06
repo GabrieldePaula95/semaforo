@@ -31,4 +31,11 @@ public class StatusSemaforoService {
     public void deletar(Long id) {
         repository.deleteById(id);
     }
+
+    public Optional<StatusSemaforo> atualizar(Long id, StatusSemaforo atualizado) {
+        return repository.findById(id).map(statusExistente -> {
+            statusExistente.setDescricao(atualizado.getDescricao());
+            return repository.save(statusExistente);
+        });
+    }
 }

@@ -24,6 +24,15 @@ public class HorarioProgramadoService {
         return repository.findById(id);
     }
 
+    public HorarioProgramado atualizar(Long id, HorarioProgramado horarioProgramado) {
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Horário Programado com ID " + id + " não encontrado.");
+        }
+        horarioProgramado.setId(id);
+        return repository.save(horarioProgramado);
+    }
+
+
     public HorarioProgramado salvar(HorarioProgramado horarioProgramado) {
         return repository.save(horarioProgramado);
     }

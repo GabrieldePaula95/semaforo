@@ -57,6 +57,54 @@ spring.jpa.database-platform=org.hibernate.dialect.Oracle12cDialect
 spring.jpa.hibernate.ddl-auto=update
 
 
+▶ Compilar e executar
+
+./mvnw spring-boot:run
+
+🧪 Como executar os testes no Insomnia
+Para facilitar os testes da API do sistema Semáforo Inteligente, foi criada uma coleção no Insomnia contendo todas as requisições organizadas por entidade (Usuários, Semáforos, StatusSemaforo, etc.).
+
+✅ Pré-requisitos
+Ter o Insomnia instalado.
+
+A API deve estar rodando localmente em http://localhost:8080/.
+
+Usuário admin com senha admin deve existir no banco para autenticação básica (HTTP Basic Auth).
+
+🚀 Passo a passo
+Importar a coleção:
+
+Abra o Insomnia.
+
+Vá em Application (ícone de engrenagem no canto superior esquerdo) > Import/Export > Import Data > From File.
+
+Selecione o arquivo .json da coleção (ex: semaforo-inteligente-insomnia.json).
+
+Executar as requisições:
+
+Após importar, você verá pastas como User, Status Semaforo e Semaforo.
+
+Dentro de cada pasta, há requisições para:
+
+Create (POST)
+
+Read (GET)
+
+Update (PUT)
+
+Delete (DELETE)
+
+Para autenticar, as requisições já vêm configuradas com autenticação básica (admin / admin).
+
+Testar os endpoints:
+
+Você pode alterar os corpos das requisições POST e PUT para simular diferentes dados.
+
+Certifique-se de que os id utilizados nas rotas (/usuarios/{id} etc.) existam no banco de dados.
+
+As respostas virão em JSON no painel de resposta do Insomnia.
+
+
 🐳 Rodando com Docker 
 
 - Docker Desktop (instalado)
@@ -98,11 +146,4 @@ GET http://localhost:8080/usuarios
 
 Para intorremper os containers
 docker-compose down
-
-
-▶ Compilar e executar
-
-./mvnw spring-boot:run
-
-
 
