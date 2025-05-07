@@ -147,3 +147,32 @@ GET http://localhost:8080/usuarios
 Para intorremper os containers
 docker-compose down
 
+✅ Executando os Testes Automatizados (BDD com Cucumber)
+Este projeto utiliza testes automatizados com Cucumber e JUnit para validação de funcionalidades via BDD (Behavior Driven Development).
+
+📋 Pré-requisitos
+Certifique-se de que você tem o seguinte instalado:
+
+Java JDK 17+
+
+Maven ou Gradle configurado
+
+IDE com suporte a Cucumber (como IntelliJ IDEA ou Eclipse)
+
+Dependências configuradas no pom.xml (caso Maven) ou build.gradle
+
+▶️ Como executar os testes
+Você pode executar os testes de duas formas:
+
+1. Pela IDE:
+Clique com o botão direito na classe de testes (ex: RunnerTest.java) e selecione "Run".
+
+Ou execute o arquivo Feature diretamente se a IDE suportar.
+
+2. Pelo terminal com Maven:
+mvn test
+
+🧪 Estrutura dos testes
+Os testes estão localizados na pasta:
+src/test/java/steps – Step definitions
+src/test/resources/features – Arquivos .feature com os cenários em Gherkin
