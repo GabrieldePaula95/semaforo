@@ -35,3 +35,15 @@ jobs:
 
       - name: Gerar artefato
         run: ./mvnw package -DskipTests
+
+      - name: Build and test
+        run: mvn clean test
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: continuous-integration
+    if: success()
+    steps:
+      - name: CI/CD - Semáforos Inteligentes
+        run: |
+          echo "Deploying application..."

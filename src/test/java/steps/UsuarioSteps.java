@@ -1,7 +1,9 @@
 package steps;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.networknt.schema.ValidationMessage;
 import io.cucumber.java.pt.*;
+import org.junit.Assert;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
@@ -10,8 +12,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.test.context.ActiveProfiles;
 import services.UsuarioService;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import static org.junit.Assert.*;
 
@@ -84,5 +88,30 @@ public class UsuarioSteps {
         for (Map<String, String> linha : rows) {
             usuarioService.setUsuario(linha.get("campo"), linha.get("valor"));
         }
+    }
+
+    @Dado("que eu tenha os seguintes dados:")
+    public void queEuTenhaOsSeguintesDados(List<Map<String, String>> rows) throws Exception {
+        requisicaoBuilder = new RequisicaoBuilder("user", "test123");
+
+        for (Map<String, String> columns : rows) {
+            usuarioService.setUsuario(columns.get("campo"), columns.get("valor"));
+        }
+    }
+
+    @Quando("eu enviar a requisição para o endpoint {string} de cadastro de entregas")
+    public void euEnviarARequisicaoParaOEndpointDeCadastroDeEntregas(String enpoint) {
+        usuarioService.createUsuario("/usuarios");
+    }
+
+    @E("que o arquivo de contrato esperado é o {string}")
+    public void queOArquivoDeContratoEsperadoEO(String contract) throws IOException {
+        usuarioService.setContract(contract);
+    }
+
+    @Então("a resposta da requisição deve estar em conformidade com o contrato selecionado")
+    public void aRespostaDaRequisicaoDeveEstarEmConformidadeComOContratoSelecionado() throws IOException {
+        Set<ValidationMessage> validateResponse = usuarioService.validateResponseAgainstSchema();
+        Assert.assertTrue("O contrato está inválido. Erros encontrados: " + validateResponse, validateResponse.isEmpty());
     }
 }
