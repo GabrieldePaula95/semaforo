@@ -153,7 +153,7 @@ Este projeto utiliza testes automatizados com Cucumber e JUnit para validação 
 📋 Pré-requisitos
 Certifique-se de que você tem o seguinte instalado:
 
-Java JDK 17+
+Java JDK 21
 
 Maven ou Gradle configurado
 
